@@ -1,0 +1,59 @@
+<!-- Left-side Content -->
+<div id="main-content" class="set-border clearfix">
+
+	<h1><%= @name %></h1>
+
+	<% 
+		table_fields  = ["Type","Album","Release Date"]
+		social_fields = ["Facebook","YouTube","IMDB","Twitter","LastFM","Instagram Discography"]
+	%>
+
+
+	<% unless @artist_description.empty? %>
+		<p><%= @artist_description %></p>
+	<% end %>
+
+	<table border=0 cellspacing="0">
+		<caption><%= @name %>'s Albums</caption>
+		<thead>
+			<tr>
+					<% table_fields.each do |field| %>
+						<th><%= field %></th> 
+					<% end %>
+			</tr>
+		</thead>
+		<tbody>
+			
+			<% @artist_information["titles"].each_with_index do |field, index| %>
+				<tr>
+					<td><%= @artist_information["types"][index]    %></td>
+					<th><%= @artist_information["titles"][index]   %></th>
+					<td><%= @artist_information["releases"][index] %></td>
+				</tr>
+			<% end %>
+
+		</tbody>
+	</table>
+
+</div>
+
+<!-- Right-side Content -->
+<aside class="set-border clearfix">
+	<img class="main-image" src="<%=(@artist_image.nil?)? "../images/image_placeholder.png" : @artist_image%>" alt="<%= @name %>'s image">
+	<ul class="artist-info">
+		<li>Type<span><%= @artist_information["information"].type %></span></li>
+		<li>Country<span><%= Country.full_name(@artist_information["information"].country) %></span></li>
+		<li>Date Began<span><%= MBrainz.date(@artist_information["information"].date_begin) %></span></li>
+		<li>Date End<span><%= MBrainz.date(@artist_information["information"].date_end) %></span></li>
+	</ul>
+	<% if !@url.empty? %>
+		<h3>Social Networks</h3>
+	<% end %>
+	<ul class="social">
+		<% social_fields.each do |key| %>
+			<% unless @url[key.downcase].nil? %>
+				<li><a href="<%= @url[key.downcase] %>" target="_blank"><%= key %></a></li>
+			<% end %>
+		<% end %>
+	</ul>
+</aside>

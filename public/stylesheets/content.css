@@ -1,0 +1,153 @@
+#main-content {
+	position: relative;
+	float: left;
+	width: -webkit-calc(100% - 310px);
+	background: rgba(255,255,255,.9);
+	border-radius: 6px 0 0 0;
+}
+#content .full-screen {
+	width: 1024px;
+}
+#main-content h1 {
+	position: relative;
+	background: rgb(40,40,40);
+	padding: 20px;
+	color: rgb(255,255,255);
+	letter-spacing: 5px;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	border-radius: 6px 0 0 0;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.9);
+}
+aside {
+	position: relative;;
+	float: right;
+	width: 300px;
+	min-height: 660px;
+	background: rgba(0,0,0,.8);
+	border: 1px solid rgb(220,220,220);
+	border-radius: 0 6px 6px 0;
+	color: rgb(240,240,240);
+}
+aside img.main-image {
+	border: 2px solid rgb(100,169,223);
+	border-radius: 2px;
+	box-shadow: 2px 4px 3px rgba(0,0,0,0.9);
+}
+
+.info-tabs {
+	position: relative;
+	left: 0;
+	margin: 0 auto 1px;
+}
+.info-tabs li {
+	position: relative;
+	float: left;
+	list-style: none;
+	margin-right: 1px;
+	padding: 15px 20px;
+	background: rgb(100,100,100);
+	color: rgb(255,255,255);
+	line-height: 14px;
+}
+.info-tabs li:first-child { border-radius: 4px 0 0 0; }
+.info-tabs li:last-child { border-radius: 0 4px 0 0; }
+.info-tabs li:hover {
+	background: rgb(100,169,223);
+	cursor: pointer;
+}
+.main-image {
+	margin: 40px auto 20px;
+	width: 220px;
+	height: 220px;
+	border: 1px solid rgb(90,90,90)
+}
+li.selected {
+	background: rgb(100,169,223);
+}
+#main-content p {
+	padding: 20px 40px 0;
+	line-height: 18px;
+	color: rgb(24,24,24);
+}
+table {
+	width: 90%;
+	margin: 60px auto;
+}
+caption {
+	background: rgb(100,169,223);
+	color: rgb(255,255,255);
+	margin-bottom: 40px;
+}
+thead {
+	background: rgb(220,220,220);
+}
+tbody th:nth-child(2) {
+	text-align: left;
+}
+tr:nth-child(even) {
+	background: rgb(220,220,220);
+}
+td:nth-child(3) {
+	color: rgb(60,129,183);
+}
+td:nth-child(3) a:hover {
+	color: red;
+}
+caption , th, tr, td {
+	padding: 10px 12px;
+}
+aside ul {
+	width: 100%;
+	margin: 40px 20px;
+}
+aside li {
+	padding: 10px;
+	font-weight: bold;
+}
+.set-border {
+	border: 1px solid rgb(120,120,120);
+}
+ul.artist-info li {
+	position: relative;
+	max-width: 230px;
+}
+ul.artist-info li span {
+	position: absolute;
+	right: 0;
+	color: rgb(100,169,223);
+}
+ul.social {
+	margin-top: 10px;
+}
+ul.social a {
+	text-align: center;
+	color: rgb(100,169,223);
+	text-decoration: underline;
+}
+ul.social a:hover {
+	color: red;
+}
+h3 {
+	text-align: left;
+	text-decoration: underline;
+	padding-left: 30px;
+}
+#main-content img.cover {
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#main-content h2 {
+	position: absolute;
+	top: 300px;
+	left: 120px;
+	background: rgba(0,0,0,.4);
+	padding: 60px 100px;
+	font-size: 30px;
+	color: rgb(255,255,255);
+	text-align: center;
+}

@@ -1,0 +1,43 @@
+<!-- Left-side Content -->
+<div id="main-content" class="full-screen set-border clearfix">
+	
+	<% if (!@main_page) && (!@names.empty?) %>
+	<% 
+		table_fields = ["No.","Score","Name","Type","Country","Begin","End"]
+	  @names = {} if @names == nil
+	%>
+		<table border=0 cellspacing="0">
+			<caption>Search Results</caption>
+			<thead>
+				<tr>
+					<% table_fields.each do |field| %>
+						<th><%= field %></th> 
+					<% end %>
+				</tr>
+			</thead>
+			<tbody>
+				<% @names.each_with_index do |name, index| %>
+					<tr>
+						<th><%= index + 1 %></th>
+						<td><%= name[1][0] %></td>
+					  <td><a href="/<%= name[1][1] %>/<%= @names.keys[index] %>"><%= name[1][1] %></a></td>
+						<td><%= name[1][2] %></td>
+						<td><%= name[1][3] %></td>
+						<td><%= name[1][4] %></td>
+						<td><%= name[1][5] %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% else %>
+		<style>
+			#main-content { background: rgba(0,0,0,.7); }
+			.set-border { border: 1px solid rgb(40,40,40); }
+		</style>
+		<h1>Welcome to MusicBrainz</h1>
+			<% images = ["u2.jpg","michael_jackson.jpeg","miley_cyrus.jpg","nirvana.jpg","rihanna.jpeg"] %>
+			<img class="cover" src="/images/<%= images.sample %>" alt="Explore our website">
+			<h2>Your one stop source for everything music</h2>
+	<% end %>
+
+</div>
