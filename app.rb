@@ -1,10 +1,9 @@
 require 'bundler/setup'
 Bundler.require(:default)
 
-require 'pry'
 require 'json'
 require 'sinatra'
-require 'sinatra/reloader'
+
 require 'httparty'
 require 'musicbrainz'
 require 'wikipedia'
